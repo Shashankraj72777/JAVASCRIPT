@@ -142,4 +142,143 @@ console.log(hiddenNo);
 // This is an example of string.prototype.repeat()
 const mood = "Sad , ";
 console.log(`I feel very ${mood.repeat(6)}`);
-// output 
+// output I feel very Sad , Sad , Sad , Sad , Sad , Sad ,
+
+
+// This is an example of string.prototype.replace()
+console.log(paragraph.replace("very", "wonderful"));
+// output: Chandigarh is wonderful beautiful place and very clean city
+
+
+// This is an example of string.prototype.replaceAll()
+console.log(paragraph.replaceAll("very", "wonderful"));
+//output: Chandigarh is wonderful beautiful place and wonderful clean city
+
+
+// This is an example of string.prototype.search()
+const regexpression = /[A-Z]/;
+console.log(paragraph.search(regexpression)); // 0
+console.log(paragraph[paragraph.search(regexpression)]); // C
+
+
+// This is an example of string.prototype.slice()
+const string6 = "My name is Shashank Raj and I am from Buxar Bihar";
+console.log(string6.slice(8));
+console.log(string6.slice(7, 18));
+//output: is Shashank Raj and I am from Buxar Bihar
+// output: is Shashan
+
+
+// This is an example of string.prototype.split()
+const words = string6.split(' ');
+console.log(words[4]);
+
+const characters = string6.split('');
+console.log(characters[8]);
+
+const strCopy = string6.split();
+console.log(strCopy);
+//output
+/* Raj
+i
+[ 'My name is Shashank Raj and I am from Buxar Bihar' ]
+ */
+
+
+// This is an example of string.prototype.startsWith()
+console.log(string6.startsWith("My"));  // true
+console.log(string6.startsWith("My", 6));  // false
+
+
+// This is an example of string.prototype.startsWith()
+const str11 = "Shashank";
+console.log(str11.substring(1, 4));  // has
+console.log(str11.substring(5)); // ank
+
+
+// This is an example of string.prototype.toLocaleLowerCase()
+const example = "India";
+console.log(`EN-US: ${example.toLocaleLowerCase('en-US')}`);
+// output: india
+
+
+// This is an example of string.prototype.toLocaleUpperCase()
+const example1 = "india";
+console.log(`EN-US: ${example.toLocaleUpperCase('en-US')}`);
+// output: INDIA
+
+
+// This is an example of string.prototype.toLowerCase()
+const sent = "My name is Shashank Raj and I am from Buxar Bihar";
+console.log(sent.toLowerCase());
+// output: my name is shashank raj and i am from buxar bihar
+
+
+// This is an example of string.prototype.toString()
+const strObj = new String("Raj");
+console.log(strObj);   // [String: 'Raj']
+console.log(strObj.toString());  // Raj
+
+
+// This is an example of string.prototype.toUpperCase()
+console.log(sent.toUpperCase());
+// output: MY NAME IS SHASHANK RAJ AND I AM FROM BUXAR BIHAR
+
+
+// This is an example of string.prototype.toWellFormed()
+const str3 = [
+  // Lone leading surrogate
+  "ab\uD800",
+  "ab\uD800c",
+  // Lone trailing surrogate
+  "\uDFFFab",
+  "c\uDFFFab",
+  // Well-formed
+  "abc",
+  "ab\uD83D\uDE04c",
+];
+for (const str of str3) {
+  console.log(str.toWellFormed());
+}
+// Logs:
+// "ab�"
+// "ab�c"
+// "�ab"
+// "c�ab"
+// "abc"
+// "ab😄c"
+
+
+// This is an example of string.prototype.trim()
+const sent2 = "     Lemon       ";
+console.log(sent2);  //  "      Lemon       " 
+console.log(sent2.trim()); // Lemon
+
+
+// This is an example of string.prototype.trimEnd()
+console.log(sent2);  // "     Lemon        "
+console.log(sent2.trimEnd()); // "           Lemon"
+
+
+// This is an example of string.prototype.trimStart()
+console.log(sent2);  // "     Lemon        "
+console.log(sent2.trimStart()); // "Lemon         "
+
+
+// This is an example of string.prototype.valueOf()
+const strObj1 = new String("Raj");
+console.log(strObj1);   // [String: 'Raj']
+console.log(strObj1.valueOf());  // Raj
+
+
+// This is an example of string.prototype.[Symbol.iterator]()
+const str = "The quick red fox jumped over the lazy dog's back.";
+
+const iterator = str[Symbol.iterator]();
+let theChar = iterator.next();
+
+while(!theChar.done && theChar.value !== ' ') {
+  console.log(theChar.value);
+  theChar = iterator.next();
+}
+// output: 
